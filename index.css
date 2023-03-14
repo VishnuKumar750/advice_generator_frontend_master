@@ -1,0 +1,131 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.togglePopup:hover{
+   background: hsl(217, 19%, 24%);
+   color: hsl(193, 38%, 86%);
+}
+
+.togglePopup {
+   padding: 12px;
+   border: 0;
+   outline: none;
+   border-radius: 12px;
+   font-size: 24px;
+   font-family: 'Manrope', sans-serif;
+   font-weight: 800;
+   color:  hsl(150, 100%, 66%);
+   background: hsl(217, 19%, 38%);
+   cursor: pointer;
+}
+
+.main_container {
+   width: 100vw;
+   height: 100vh;
+   background: hsl(218, 23%, 16%);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+#container {
+   width: 330px;
+   height: 290px;
+   position: fixed;
+   top:50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.header_h3 {
+   font-family: 'Manrope', sans-serif;
+   color: hsl(150, 100%, 66%);
+   font-size: 12px;
+   margin-top: 5%;
+   letter-spacing: 4px;
+}
+
+.advice_container {
+   background: hsl(217, 19%, 24%);
+   border-radius: 12px;
+   padding-top: 18px;
+   text-align: center;
+   width: 350px;
+   
+   height: 270px;
+}
+
+.divider {
+   margin-top: 5%;
+
+}
+
+.dice {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: hsl(150, 100%, 66%);
+   box-shadow: 35px 35px 35px 35px 50px hsl(150, 100%, 66%);
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+   position: fixed;
+   left: 44%;
+   top: 90%;
+   cursor: pointer;
+}
+
+.dive:hover {
+   box-shadow: 35px 35px 123px 123px 40px hsl(150, 100%, 66%);
+}
+
+.advice_desc {
+   font-size: 22px;
+   width: 80%;
+   text-align: center;
+   margin: auto auto;
+   padding-top: 5%;
+   font-weight: 800;
+   font-family: 'Manrope', sans-serif;
+   color: hsl(193, 38%, 86%);
+}
+@media only screen and (min-width: 1440px) {
+   #container {
+      width: 550px;
+
+   }
+
+   .advice_container {
+      width: 530px;
+      height: 300px;
+      box-shadow: 10px 15px hsl(218, 23%, 16%);
+   }
+
+   .advice_desc {
+      font-size: 28px;
+      width: 80%;
+      text-align: center;
+      margin: auto auto;
+      padding-top: 5%;
+      font-weight: 800;
+      font-family: 'Manrope', sans-serif;
+      color: hsl(193, 38%, 86%);
+   }
+
+   .dice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: hsl(150, 100%, 66%);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      position: relative;
+      left: 42%;
+      top: -28px;
+   
+   }
+}
+

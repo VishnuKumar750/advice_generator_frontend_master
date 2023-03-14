@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./index.css">
+  <title>Frontend Mentor | Advice generator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="main_container">
+    <button id="toggle" class="togglePopup" onclick="toggle()">Toggle PopUp</button>
+    <div id="container" onclick="toggle()">
+      <div class="advice_container">
+        <h3 class="header_h3">Advice #<span id="advice_data_id" class="advice_id"></span>117</h3>
+        <p class="advice_desc">
+          "<span id="advice_data">it is easy to sit up and take notice, what's difficult is getting up and taking action.</span>"
+        </p>
+        <div class="divider"><img src="/images/pattern-divider-mobile.svg"/>
+        </div>
+      </div>
+      <div id="advice_btn" class="dice">
+        <img src="/images/icon-dice.svg"/>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+    function toggle () {
+      var popup = document.getElementById('container');
+      if(popup.style.display === 'none') {
+        popup.style.display = 'block';
+      } 
+    }
+
+    let adviceButton = document.getElementById('advice_btn');
+    let adviceData = document.getElementById('advice_data');
+    let adviceid = document.getElementById('advice_data_id');
+
+    adviceButton.addEventListener('click', () => {
+      let URL = 'https://api.adviceslip.com/advice';
+
+      fetch(URL).then(data => data.json()).then(data => {
+        adviceData.innerHTML = data.slip.advice;
+        adviceid.innerHTML = data.slip.id;
+      })
+    })
+  </script>
+</body>
+</html>
